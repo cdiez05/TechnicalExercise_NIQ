@@ -1,0 +1,22 @@
+# Configuration for the ML solution pipeline
+
+data:
+  image_size: [224, 224]  # Image size for preprocessing
+  batch_size: 32  # Batch size for DataLoader
+  num_workers: 1  # Number of workers for DataLoader
+  seed: 42  # Random seed for reproducibility
+  split_ratios:  # Data split ratios for train, validation, and test
+    train: 0.7
+    val: 0.15
+    test: 0.15
+  dataset_paths:  # File paths or URLs for datasets
+    dataset_csv: 'en.openfoodfacts.org.products.csv'
+
+model:
+  learning_rate: 0.001  # Learning rate for the optimizer
+  optimizer: 'adam'  # Type of optimizer (adam, sgd, etc.)
+  epochs: 1  # Number of training epochs
+
+output:
+  model_checkpoint_path: 'checkpoints/model.pth'  # Path to save model checkpoints
+  logs_dir: 'logs/'  # Directory to store logs and results
